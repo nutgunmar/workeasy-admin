@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f0f2f5;
+}
+
+.inputContainer {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.textArea {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+}
+
+.formatButton {
+  align-self: center;
+}
+
+.container :global(.ant-typography) {
+  color: #333;
+  margin-bottom: 20px;
+}
