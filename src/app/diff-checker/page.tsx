@@ -1,8 +1,9 @@
+// src/app/diff-checker/page.tsx
 "use client";
 
 import { useState } from "react";
-import { Button, Input, Typography, Space, Alert, message } from "antd";
-import * as Diff from "diff"; // นำเข้า diff library
+import { Button, Input, Typography, Space, Alert, message, Select } from "antd"; // เพิ่ม Select
+import * as Diff from "diff";
 import styles from "./styles.module.css";
 
 const { Title } = Typography;
@@ -21,7 +22,7 @@ export default function DiffCheckerPage() {
   const [rightText, setRightText] = useState("");
   const [diffResult, setDiffResult] = useState<DiffResult[]>([]);
   const [showDiff, setShowDiff] = useState(false);
-  const [viewMode, setViewMode] = useState<"side" | "inline">("side"); // side-by-side หรือ inline
+  const [viewMode, setViewMode] = useState<"side" | "inline">("side");
 
   const handleCompare = () => {
     if (!leftText && !rightText) {
@@ -36,8 +37,7 @@ export default function DiffCheckerPage() {
         right: part.value,
         isAdded: part.added,
         isRemoved: part.removed,
-        isChanged:
-          !part.added && !part.removed && part.originalNo && part.newNo, // สำหรับ unchanged
+        isChanged: !part.added && !part.removed && part.originalNo && part.newNo,
       }));
       setDiffResult(result);
       setShowDiff(true);
@@ -87,7 +87,6 @@ export default function DiffCheckerPage() {
         </div>
       );
     } else {
-      // Inline mode: แสดง diff แบบรวม
       return (
         <div key={index} className={className}>
           <pre>
@@ -151,8 +150,8 @@ export default function DiffCheckerPage() {
             onChange={(value) => setViewMode(value)}
             style={{ width: 120 }}
           >
-            <option value="side">Side-by-Side</option>
-            <option value="inline">Inline</option>
+            <Select.Option value="side">Side-by-Side</Select.Option>
+            <Select.Option value="inline">Inline</Select.Option>
           </Select>
         </div>
       </div>

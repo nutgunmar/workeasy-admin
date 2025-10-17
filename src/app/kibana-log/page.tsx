@@ -1,7 +1,7 @@
 "use client"; // เปิดใช้งานฟีเจอร์ฝั่งไคลเอนต์
 
 import { useState } from "react";
-import { Select, Input, Button, Card, Space, message } from "@antd/compatible";
+import { Select, Input, Button, Card, Space, message } from "antd";
 const { Option } = Select;
 
 export default function Home() {

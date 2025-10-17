@@ -32,7 +32,7 @@ const thaiSurnames = [
   "แสงจันทร์",
   "ดวงดาว",
 ];
-const photoFiles = ["photo1.jpg", "photo2.jpg", "photo3.jpg"]; // รายชื่อไฟล์ใน public/images/photos
+const photoFiles = ["photo1.png", "photo2.png", "photo3.png"]; // รายชื่อไฟล์ใน public/images/photos
 
 interface FakeID {
   id: string;
